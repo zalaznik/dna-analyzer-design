@@ -2,8 +2,11 @@
 #ifndef __DNA_SEQ_H__
 #define __DNA_SEQ_H__
 
+#include <cstddef>//for size_t
 
-class New : public Icommand{
+#include "../Icommand.h"
+
+class New : public ICommand{
 public:
     New(const char* args[]);
     void doAction();

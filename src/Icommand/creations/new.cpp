@@ -1,13 +1,13 @@
 
 #include "new.h"
 
-#include "dna_data.h"
+#include "../../meta_data/dna_data.h"
 
 New::New(const char* args [])
 {
     m_id = (size_t)args[0];
     m_name = args[1];
-    m_seq = args[2]
+    m_seq = args[2];
 }
 
 
