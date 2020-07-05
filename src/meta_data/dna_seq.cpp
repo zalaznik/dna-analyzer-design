@@ -1,6 +1,8 @@
 
 #include "dna_seq.h"
 
+#include <string.h> //for c-string methods
+
 static bool IsValidDna(std::string dna)
 {
     size_t i = 0;
@@ -149,4 +151,3 @@ const char* DnaSequence::getMDnaSequence() const
 
     return char_dna_sequence;
 }
-

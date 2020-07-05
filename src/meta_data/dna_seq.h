@@ -3,6 +3,8 @@
 #ifndef __DNA_SEQ_H__
 #define __DNA_SEQ_H__
 
+#include <iostream> //for std
+
 
 class DnaSequence{
 
