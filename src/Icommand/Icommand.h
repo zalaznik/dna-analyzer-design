@@ -8,6 +8,7 @@ class ICommand
 {
 public:
     virtual void doAction() = 0;
+    virtual void printRes() = 0;
 };
 
 
