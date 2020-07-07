@@ -6,6 +6,7 @@
 
 #include "../Icommand.h"
 
+
 class New : public ICommand{
 public:
     New(const char* args[]);

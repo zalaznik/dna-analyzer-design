@@ -1,7 +1,7 @@
 
 #include "new.h"
 
-#include "../../meta_data/dna_data.h"
+#include "../../meta_data/dna_container.h"
 
 New::New(const char* args [])
 {
@@ -13,6 +13,6 @@ New::New(const char* args [])
 
 void New::doAction()
 {
-    DnaData(m_id,m_name,m_seq);
-    //add to container
+    DnaData dna_data(m_id,m_name,m_seq);
+    DnaContainer::addToMap(dna_data);
 }
