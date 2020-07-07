@@ -151,3 +151,4 @@ const char* DnaSequence::getMDnaSequence() const
 
     return char_dna_sequence;
 }
+

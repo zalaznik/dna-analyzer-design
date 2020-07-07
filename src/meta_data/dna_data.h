@@ -7,7 +7,7 @@
 class DnaData
 {
 public:
-    DnaData(size_t id, const char* name, const char* seq):m_id(id),m_name(name),m_dna_seq(seq){};
+    DnaData(const char* name, const char* seq):m_id(determineId()),m_name(name),m_dna_seq(seq){};
     size_t getId() const{return m_id;};
     const char* getName() const{ return  m_name;}
 

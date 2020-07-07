@@ -11,16 +11,14 @@ class DnaContainer
 public:
     static void addToMap(DnaData& dna_data)
     {
-        idMap.insert({dna_data.getId(), &dna_data});
-        nameIdMap.insert({dna_data.getName(), dna_data.getId()});
+        idMap.insert(std::pair<size_t, DnaData*>(dna_data.getId(), &dna_data));
+        nameIdMap.insert(std::pair<const char* , size_t>(dna_data.getName(), dna_data.getId()));
     };
-
 
 private:
     static std::map<size_t, DnaData*> idMap;
-    static std::map<const char* , size_t > nameIdMap;
+    static std::map<const char* , size_t> nameIdMap;
 };
-
 
 
 #endif
