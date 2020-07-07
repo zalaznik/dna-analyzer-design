@@ -2,8 +2,9 @@
 
 #include "dna_data.h"
 
-
-int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+size_t DnaData::determineId()
+{
+    static size_t id = 0;
+    return ++id;
 }
+
