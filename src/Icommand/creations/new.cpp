@@ -1,18 +1,38 @@
 
 #include "new.h"
-
 #include "../../meta_data/dna_container.h"
 
-New::New(const char* args [])
+#include <sstream> //for std::ostringstream
+
+New::New( const char* seq, const char* name)
 {
-    m_id = (size_t)args[0];
-    m_name = args[1];
-    m_seq = args[2];
+    m_name = name;
+    m_seq = seq;
 }
 
 
 void New::doAction()
 {
-    DnaData dna_data(m_id,m_name,m_seq);
+    DnaData dna_data(m_name,m_seq);
     DnaContainer::addToMap(dna_data);
 }
+
+
+void New::printRes()
+{
+
+}
+
+
+const char* New::determineName()
+{
+    static size_t serial = 0;
+    std::ostringstream castToStr;
+    castToStr << ++serial;
+    return ("seq" + castToStr.str()).c_str();
+}
+
+
+
+
+

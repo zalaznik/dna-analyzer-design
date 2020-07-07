@@ -1,6 +1,6 @@
 
-#ifndef __DNA_SEQ_H__
-#define __DNA_SEQ_H__
+#ifndef __NEW_H__
+#define __NEW_H__
 
 #include <cstddef>//for size_t
 
@@ -9,13 +9,14 @@
 
 class New : public ICommand{
 public:
-    New(const char* args[]);
+    New(const char* seq, const char* name = determineName());
     void doAction();
+    void printRes();
 
 private:
-    size_t m_id;
     const char* m_name;
     const char* m_seq;
+    static const char* determineName();
 };
 
 #endif
