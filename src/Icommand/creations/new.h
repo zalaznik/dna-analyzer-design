@@ -6,17 +6,18 @@
 
 #include "../Icommand.h"
 
+class DnaData;
 
 class New : public ICommand{
 public:
     New(const char* seq, const char* name = determineName());
     void doAction();
-    void printRes();
 
 private:
     const char* m_name;
     const char* m_seq;
     static const char* determineName();
+    void printRes(const DnaData& dna_data);
 };
 
 #endif
