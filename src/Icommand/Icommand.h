@@ -7,6 +7,7 @@
 class ICommand
 {
 public:
+    virtual ~ICommand(){};
     virtual void doAction() = 0;
 };
 
