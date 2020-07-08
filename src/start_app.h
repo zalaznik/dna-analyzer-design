@@ -5,10 +5,12 @@
 #ifndef SRC_START_APP_H
 #define SRC_START_APP_H
 
+#include "manager.h"
 
-class start_app {
 
+class StartApp{
+public:
+    void start(IReader* reader, IWriter* writer);
 };
-
 
 #endif //SRC_START_APP_H
