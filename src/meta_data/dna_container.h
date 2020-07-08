@@ -4,16 +4,12 @@
 
 #include "dna_data.h"
 
-#include <map>
+#include <map>//for std::map
 
 class DnaContainer
 {
 public:
-    static void addToMap(DnaData& dna_data)
-    {
-        idMap.insert(std::pair<size_t, DnaData*>(dna_data.getId(), &dna_data));
-        nameIdMap.insert(std::pair<const char* , size_t>(dna_data.getName(), dna_data.getId()));
-    };
+    static void addToMap(DnaData* dna_data);
 
 private:
     static std::map<size_t, DnaData*> idMap;
