@@ -2,7 +2,6 @@
 // Created by a on 7/8/20.
 //
 
-#include <stdexcept>
 #include "terminal.h"
 #include "utils/parser.h"
 #include "factory.h"
