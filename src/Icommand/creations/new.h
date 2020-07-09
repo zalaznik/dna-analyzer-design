@@ -11,12 +11,12 @@ class DnaData;
 
 class New : public ICommand{
 public:
-    New(const char* seq, std::string name = determineName());
+    New(std::string seq, std::string name = determineName());
     void doAction();
 
 private:
     std::string m_name;
-    const char* m_seq;
+    std::string m_seq;
 
     static std::string determineName();
     void printRes(const DnaData& dna_data);
