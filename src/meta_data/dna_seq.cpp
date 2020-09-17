@@ -2,6 +2,8 @@
 #include "dna_seq.h"
 
 #include <string.h> //for c-string methods
+#include <exception> //for std::exception
+
 
 static bool IsValidDna(std::string dna)
 {
@@ -40,7 +42,7 @@ DnaSequence::DnaSequence(const char *dna_Sequence):m_dna_sequence(NULL)
 
     else
     {
-        std::cout<<"invalid DNA, an empty object will create!"<<std::endl;
+        throw std::invalid_argument("invalid DNA\n") ;
     }
 }
 
@@ -62,7 +64,7 @@ DnaSequence::DnaSequence(const std::string& dna_Sequence):m_dna_sequence(NULL)
 
     else
     {
-        std::cout<<"invalid DNA, an empty object will create!"<<std::endl;
+        throw std::invalid_argument("invalid DNA\n") ;
     }
 }
 
