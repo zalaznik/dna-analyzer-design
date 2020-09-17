@@ -12,7 +12,7 @@
 
 void Terminal::runTerminal()
 {
-    m_writer->write(" > cmd >>> ");
+    m_writer->write("\n > cmd >>> ");
     Parser parser;
     Factory factory;
 
@@ -26,4 +26,3 @@ void Terminal::runTerminal()
         std::cout << e.what() << "please try again " << std::endl;
     }
 }
-

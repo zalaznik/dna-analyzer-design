@@ -13,3 +13,5 @@ void Manager::runManager(IReader* reader, IWriter* writer)
         terminal.runTerminal();
     }
 }
+
+
