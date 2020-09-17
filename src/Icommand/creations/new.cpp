@@ -10,10 +10,10 @@ New::New(std::string seq, std::string name):m_name(name), m_seq(seq.c_str())
 
 void New::doAction()
 {
-    DnaData* dna_data = new DnaData(m_name.c_str(),m_seq.c_str());
-    DnaContainer::addToMap(dna_data);
-    //to add "catch" if can't add the name as a key cause it's exist
-    printRes(*dna_data);
+        DnaData* dna_data = new DnaData(m_name.c_str(),m_seq.c_str());
+        DnaContainer::addToMap(dna_data);
+        //to add "catch" if can't add the name as a key cause it's exist
+        printRes(*dna_data);
 }
 
 
