@@ -10,7 +10,7 @@
 #include <exception> //for std::exception
 #include <iostream> //for std
 
-//#include <sstream>
+#include <sstream>//for std::stringstream (onvert from std::string into size_t
 
 ICommand* Factory::makeFactory(std::vector<std::string> vec)
 {
@@ -35,27 +35,26 @@ ICommand* Factory::makeFactory(std::vector<std::string> vec)
         }
     }
 
-//
-//    else if(vec[0] == "len")
-//    {
-//        if(vec.size() == 2)
-//        {
-            //throw an exception if the first char in vec[1] wasn't <...>
-//            std::string str(vec[1].erase(0, 1));
-//            std::cout << (str).erase(str.end() - 1));
-//            std::stringstream sstream(size_t((vec[1].erase(0, 1)).erase(vec[1].end() - 1)));
-//            size_t len;
-//            sstream >> len;
-//
-//            Len* len_obj = new Len(len);
-//            return len_obj;
-//        }
 
-//        else
-//        {
-//            throw std::invalid_argument("The amount of arguments is not appropriate\n") ;
-//        }
-//    }
+    else if(vec[0] == "len")
+    {
+        if(vec.size() == 2)
+        {
+            //throw an exception if the first char in vec[1] wasn't #
+
+            std::stringstream sstream(vec[1].erase(0, 1));
+            size_t result;
+            sstream >> result;
+
+            Len* len_obj = new Len(result);
+            return len_obj;
+        }
+
+        else
+        {
+            throw std::invalid_argument("The amount of arguments is not appropriate\n") ;
+        }
+    }
 
 
     else
