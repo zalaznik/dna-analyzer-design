@@ -5,12 +5,14 @@
 #include "factory.h"
 
 #include "Icommand/creations/new.h"
+#include "Icommand/creations/load.h"
 #include "Icommand/analysis_commands/len.h"
 
 #include <exception> //for std::exception
 #include <iostream> //for std
 
 #include <sstream>//for std::stringstream (onvert from std::string into size_t
+
 
 ICommand* Factory::makeFactory(std::vector<std::string> vec)
 {
@@ -27,6 +29,28 @@ ICommand* Factory::makeFactory(std::vector<std::string> vec)
         {
             New* new_obj = new New(vec[1]);
             return new_obj;
+        }
+
+        else
+        {
+            throw std::invalid_argument("The amount of arguments is not appropriate\n") ;
+        }
+    }
+
+
+    if(vec[0] == "load")
+    {
+        if(vec.size() == 3)
+        {
+            //throw an exception if the first char in vec[2] wasn't @
+            Load* load_obj = new Load(vec[1], vec[2].erase(0, 1));
+            return load_obj;
+        }
+
+        else if(vec.size() == 2)
+        {
+            Load* load_obj = new Load(vec[1]);
+            return load_obj;
         }
 
         else

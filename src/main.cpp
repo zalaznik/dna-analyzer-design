@@ -2,7 +2,6 @@
 #include "reader/keyboard_reader.h"
 #include "writer/screen_writer.h"
 
-#include "meta_data/dna_container.h"
 
 int main()
 {
